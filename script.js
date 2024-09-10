@@ -66,6 +66,12 @@ function collisionDetection() {
           dy = -dy;
           b.status = 0;
           score++;
+
+          if (score === brickRowCount * brickColumnCount) {
+            alert("YOU WIN, CONGRATULATIONS!");
+            document.location.reload();
+            clearInterval(interval);
+          }
         }
       }
     }
@@ -123,7 +129,11 @@ function draw() {
   if (y + dy < ballRadius) {
     dy = -dy;
   } else if (y + dy > canvas.height - ballRadius) {
-    if (x > paddleX && x < paddleX + paddleWidth) {
+    if (
+      x > paddleX &&
+      x < paddleX + paddleWidth &&
+      y + dy > canvas.height - paddleHeight - ballRadius
+    ) {
       if ((y = y - paddleHeight)) {
         dy = -dy;
       }
