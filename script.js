@@ -18,7 +18,7 @@ let interval = 0;
 
 const brickRowCount = 3;
 const brickColumnCount = 5;
-const brickWidth = 60;
+const brickWidth = 75;
 const brickHeight = 20;
 const brickPadding = 10;
 const brickOffsetTop = 30;
